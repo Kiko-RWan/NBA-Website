@@ -1,0 +1,148 @@
+{% extends 'base.html' %} {%block title%} Login {%endblock title%} {% block css1 %}
+<style>
+    #mycss {
+        padding: 15px 10px;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #fff;
+        font-size: 14px;
+        color: #666;
+        line-height: normal;
+        outline: 0;
+        margin: 0;
+        vertical-align: middle;
+        font-family: inherit;
+        font: inherit;
+        box-sizing: border-box;
+        writing-mode: horizontal-tb !important;
+        text-rendering: auto;
+        letter-spacing: normal;
+        word-spacing: normal;
+        text-transform: none;
+        text-indent: 0px;
+        text-shadow: none;
+        display: inline-block;
+        text-align: start;
+        appearance: auto;
+        -webkit-rtl-ordering: logical;
+        cursor: text;
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+    }
+    
+    .regcss {
+        color: #141414;
+        font-family: Montserrat, sans-serif;
+        font-size: 15px;
+        position: relative;
+        left: 15px;
+    }
+    
+    #underline {
+        width: 200px;
+        height: 50px;
+        margin: 20px;
+        position: relative;
+    }
+    
+    #underline:after {
+        content: "";
+        width: 0;
+        height: 1px;
+        background: blue;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transition: all .8s;
+    }
+    
+    #underline:hover:after {
+        left: 0%;
+        width: 100%;
+    }
+    
+    .errorcss {
+        color: #ff0000;
+        font-family: Montserrat, sans-serif;
+        position: relative;
+        left: 15px;
+    }
+</style>
+{% endblock css1 %} {% block body1 %}
+
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/user/">user</a>/</li>
+                            <li>category</li>
+                        </ul>
+                        <h1>register</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--CONTACT WRAP BEGIN-->
+<section class="contacts-wrap">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h4>register</h4>
+                <div class="leave-comment-wrap">
+                    <form action="/register/" method="post">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Name <i>*</i></span>
+                                        <input type="text" name="name" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Password <i>*</i></span>
+                                        <input type="password" name="pwd" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Enter password twice <i>*</i></span>
+                                        <input type="password" name="pwd2" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>e-mail <i></i></span>
+                                        <input type="text" name="mail" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="comment-submit">Register</button>
+                                <span class="errorcss">{{msg}}</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--CONTACT WRAP END-->
+
+{% endblock body1 %}

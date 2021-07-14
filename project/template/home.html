@@ -1,0 +1,267 @@
+{% extends 'base.html' %} {%block css1%}
+<style>
+    .main-slider-section {
+        background: url(/static/images/welback1.jpg) no-repeat;
+        background-size: cover;
+        background-position-y: inherit;
+    }
+</style>
+{%endblock css1%} {%block title%} Home {%endblock title%} {% block body1 %}
+<!--滚动栏 BEGIN-->
+<div class="main-slider-section">
+    <div class="main-slider">
+        <div id="main-slider" class="carousel slide" data-ride="carousel" data-interval="4000">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="main-slider-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="match-date">{{last_over_match.m_time}} / {{last_over_match.t_city}} {{last_over_match.t_home}} over</div>
+                                    <div class="team">
+                                        {{last_over_match.home_name}}
+                                        <div class="big-count">
+                                            {{last_over_match.home_score}}:{{last_over_match.away_score}}
+                                        </div>
+                                        {{last_over_match.away_name}}
+                                    </div>
+                                    <div class="booking">
+                                        <a href="/match/?mid=over">
+                                            see more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="main-slider-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="match-date">{{last_nst_match.m_time}} / {{last_nst_match.t_city}} {{last_nst_match.t_home}} coming</div>
+                                    <div class="team"> {{last_nst_match.home_name}} - {{last_nst_match.away_name}}
+                                    </div>
+                                    <div class="counter" data-date="1534185200000">
+                                        <ul>
+                                            <li>
+                                                <div class="digit days" id="dd"></div>
+                                                <div class="descr">Days</div>
+                                            </li>
+                                            <li>
+                                                <div class="digit hours" id="hh"></div>
+                                                <div class="descr">Hours</div>
+                                            </li>
+                                            <li>
+                                                <div class="digit minutes" id="mm"></div>
+                                                <div class="descr">Minutes</div>
+                                            </li>
+                                            <li>
+                                                <div class="digit seconds" id="ss"></div>
+                                                <div class="descr">Seconds</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="booking">
+                                        <a href="/match/?mid=coming">
+                                            see more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% if last_matching %}
+                <div class="item">
+                    <div class="main-slider-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="match-date">{{last_matching.m_time}} / {{last_matching.t_city}} {{last_matching.t_home}} {{last_matching.m_state}}</div>
+                                    <div class="team"> {{last_matching.home_name}}
+                                        <div class="big-count">
+                                            {{last_matching.home_score}}:{{last_matching.away_score}}
+                                        </div>
+                                        {{last_matching.away_name}}
+                                    </div>
+                                    <div class="booking">
+                                        <a href="/match/?mid=over">
+                                            see more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="item">
+                    <div class="main-slider-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="team"> no processing
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Controls -->
+            <a class="nav-arrow left-arrow" href="#main-slider" role="button" data-slide="prev">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+                <span class="sr-only"></span>
+            </a>
+            <a class="nav-arrow right-arrow" href="#main-slider" role="button" data-slide="next">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+                <span class="sr-only"></span>
+            </a>
+            <div class="event-nav">
+                <div class="container">
+                    <div class="row no-gutter carousel-indicators">
+                        <div class="col-sm-4 active" data-slide-to="0" data-target="#main-slider">
+                            <a href="#" class="nav-item">
+                                <span class="championship">lastest</span>
+                            </a>
+                        </div>
+
+                        <div class="col-sm-4" data-slide-to="1" data-target="#main-slider">
+                            <a href="#" class="nav-item">
+                                <span class="championship">comming</span>
+                            </a>
+                        </div>
+
+
+                        <div class="col-sm-4" data-slide-to="2" data-target="#main-slider">
+                            <a href="#" class="nav-item">
+                                <span class="championship">processing</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--滚动栏 END-->
+
+<section class="main-match-shedule">
+    <div class="container">
+        <div class="row">
+            <!-- 下一场比赛 BEGIN-->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <h6>Next match</h6>
+
+                <div class="main-next-match bg-cover">
+                    <img src="/static/images/next-match-bg.jpg" class="next-match-background-img" alt="next-image">
+                    <div class="wrap">
+                        <div class="place">{{last_nst_match.t_city}} {{last_nst_match.t_home}}</div>
+                        <div class="date">{{last_nst_match.m_time}}</div>
+                        <div class="teams-wrap">
+                            <a href="/team/?tname={{last_nst_match.home_name}}" class="team">
+                                <span>{{last_nst_match.home_name}}</span>
+                                <span><img src="/static/images/teamicon/{{last_nst_match.t1_icon}}"
+                                        alt="team-image"></span>
+                            </a>
+                            <div class="vs">
+                                vs
+                            </div>
+                            <a href="/team/?tname={{last_nst_match.away_name}}" class="team1">
+                                <span><img src="/static/images/teamicon/{{last_nst_match.t2_icon}}"
+                                        alt="team-image"></span>
+                                <span>{{last_nst_match.away_name}}</span>
+                            </a>
+                        </div>
+                        <a href="/match/?mid=coming" class="booking">UPCOMING MATCH</a>
+                    </div>
+                </div>
+            </div>
+            <!-- 下一场比赛 END-->
+
+            <!-- 最近比赛 BEGIN-->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <h6>Latest matches</h6>
+
+                <div class="main-lates-matches">
+                    {% for row in over_matchs %}
+                    <a href="/match/?mid=over" class="item">
+                        <span class="championship">{{row.m_time}}</span>
+                        <span class="teams-wrap">
+                            <span class="team">
+                                <span>
+                                    <img src="/static/images/teamicon/{{row.t1_icon}}" alt="team-image">
+                                </span>
+                        <span>{{row.home_name}}</span>
+                        </span>
+                        <span class="score">
+                                <span>{{row.home_score}}:{{row.away_score}}</span>
+
+                        </span>
+                        <span class="team1">
+                                <span>{{row.away_name}}</span>
+                        <span><img src="/static/images/teamicon/{{row.t2_icon}}" alt="team-image"></span>
+                        </span>
+                        </span>
+                        <span class="game-result">{{row.t_city}} {{row.t_home}}</span>
+                    </a>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <!-- 最近比赛 END-->
+        </div>
+    </div>
+</section>
+{% endblock body1 %} {% block extra %} {% endblock extra %} {% block js1 %}
+<!-- 倒计时 -->
+<script type="text/javascript">
+    var time_now_server, time_now_client, time_server_client;
+    var time_end = {{nst_time | safe}}; //结束的时间
+    time_end = new Date(time_end);
+    time_end = time_end.getTime(); //获取的是毫秒
+    time_now_server = new Date(); //开始的时间
+    time_now_server = time_now_server.getTime();
+    setTimeout("show_time()", 1000);
+
+    function show_time() {
+        var dd = document.getElementById("dd");
+        var hh = document.getElementById("hh");
+        var mm = document.getElementById("mm");
+        var ss = document.getElementById("ss");
+
+        var time_now, time_distance, str_time;
+        var int_day, int_hour, int_minute, int_second;
+        var time_now = new Date();
+        time_now = time_now.getTime();
+        time_distance = time_end - time_now;
+        if (time_distance > 0) {
+            int_day = Math.floor(time_distance / 86400000)
+            time_distance -= int_day * 86400000;
+            int_hour = Math.floor(time_distance / 3600000)
+            time_distance -= int_hour * 3600000;
+            int_minute = Math.floor(time_distance / 60000)
+            time_distance -= int_minute * 60000;
+            int_second = Math.floor(time_distance / 1000)
+
+            if (int_hour < 10)
+                int_hour = "0" + int_hour;
+            if (int_minute < 10)
+                int_minute = "0" + int_minute;
+            if (int_second < 10)
+                int_second = "0" + int_second;
+            dd.innerHTML = int_day;
+            hh.innerHTML = int_hour;
+            mm.innerHTML = int_minute;
+            ss.innerHTML = int_second;
+            setTimeout("show_time()", 1000);
+        } else {
+            timer.innerHTML = 0;
+        }
+    }
+</script>
+{% endblock js1 %}

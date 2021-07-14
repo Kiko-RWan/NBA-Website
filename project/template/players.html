@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block css1 %}
+<style>
+    .staff-box .info:before {
+        content: '';
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        right: 0px;
+        background: #f2f2f2;
+        transform: skew(-10deg);
+        transition: all .4s;
+    }
+    
+    .staff-box .info .name {
+        padding: 16px 0 0;
+        font-size: 10px;
+        line-height: 19px;
+        color: #141414;
+        text-transform: uppercase;
+        font-family: Montserrat, sans-serif;
+        display: block;
+        position: relative;
+        top: -20px;
+        left: -20px;
+    }
+    
+    .staff-box .info .number {
+        position: absolute;
+        left: -0px;
+        bottom: 20px;
+        font-size: 20px;
+        color: #999;
+        display: block;
+        transition: all .4s;
+    }
+</style>
+{% endblock css1 %} {%block title%} All Players {%endblock title%} {% block body1 %}
+
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/player?=all">player</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>nba players</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--player BEGIN-->
+<div class="club-staff-top">
+    <div class="container">
+        <div class="row">
+            <div class="staff-box">
+                <div class="search-field">
+                    <form method="post" action="/player/">
+                        <div class="wrap">
+                            <input type="text" value="{{shname}}" name="shname">
+                            <button><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+                {% for row in players %}
+                <div class="col-md-4  col-sm-6 col-xs-12">
+                    <a href="/player/?pname={{row.p_name}}" class="item">
+                        <span class="info">
+                            <span class="name">{{row.p_name}}</span>
+                        <span class="number">{{row.p_number}}</span>
+                        </span>
+                        <img src="/static/images/playerimg/{{row.p_img}}" alt="player">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--player END-->
+
+{% endblock body1 %}

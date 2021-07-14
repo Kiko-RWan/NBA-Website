@@ -1,0 +1,61 @@
+{% extends 'base.html' %} {% block title %} Not Found {% endblock title %} {% block css1 %}
+<style>
+    * {
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+        -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+    }
+    
+    .error-wrap.offline {
+        /* background: url(/static/images/soccer/offline-bg.jpg) 50% 50% no-repeat; */
+        background: url(/static/images/kobe2.jpg) 50% 50% no-repeat;
+    }
+    
+    .bottoncss {
+        position: relative;
+        top: 150px;
+    }
+    
+    .iconcss {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        top: 100px;
+        left: 5px;
+    }
+    
+    #css2 {
+        color: #F8F8FF;
+        position: relative;
+        top: 150px;
+    }
+    
+    body {
+        background-color: #000000;
+    }
+</style>
+{% endblock css1 %} {% block head %} {% endblock head %} {% block body1 %}
+<div class="error-wrap offline">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/" class="error-logo"><img src="/static/images/logo_nba.svg" alt="logo" class="iconcss"></a>
+            </div>
+        </div>
+    </div>
+    <div class="error-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <span class="big-text" id="css2">404</span>
+                    <span class="small-text" id="css2">Error <br>Page not found</span>
+                    <br>
+                    <a href="/home/" class="back" id="css2"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body1 %} {% block extra %} {% endblock extra %}

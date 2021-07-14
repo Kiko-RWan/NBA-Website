@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {%block css1%}
+
+<style>
+
+</style>
+{%endblock css1%} {%block title%} Player-{{pname}} {%endblock title%} {% block body1 %}
+
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/player?pname=all">player</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>player info</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--PLAYER INFO BEGIN-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="captain-bage">player</div>
+            <h4 class="player-name">{{pinfo.p_name}}</h4>
+        </div>
+        <div class="col-md-3">
+            <br>
+            <br>
+            <div class="player-photo">
+                <img class="img-responsive" src="/static/images/playerimg/{{pinfo.p_img}}" alt="player">
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="player-hockey-wrap">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6">
+                        <div class="stats">
+                            <p class="number">{{pinfo.p_number}}</p>
+                            <p class="name">{{pinfo.p_name}}</p>
+                            <p calss="info1css" style="
+                            position: relative;
+                            top: 10px;
+                            ">weight : {{pinfo.p_weight}}lb</p>
+                            <p class="info2css" style="
+                            position: relative;
+                            top: 10px;
+                            ">height : {{pinfo.p_height}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="canvas">
+                            <a href="/team/?tname={{pteam.t_name}}">
+                                <img src="/static/images/teamicon/{{pteam.t_icon}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--PLAYER INFO END-->
+
+
+
+{% endblock body1 %}

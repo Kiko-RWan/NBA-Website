@@ -1,0 +1,116 @@
+{% extends 'base.html' %} {% block title %} new article {% endblock title %} {% block css1 %}
+<style>
+    .inputfile {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+    }
+    
+    .inputfile+label {
+        cursor: pointer;
+    }
+</style>
+
+{% endblock css1 %} {% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/user/">user</a>/</li>
+                            <li>category</li>
+                        </ul>
+                        <h1>add article</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--CONTACT WRAP BEGIN-->
+<section class="contacts-wrap">
+    <div class="container">
+        <div class="row">
+            <div>
+                <h4>add article</h4>
+                <div class="leave-comment-wrap">
+                    <form enctype="multipart/form-data" action="/add_art/" method="post" onsubmit="return check()">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Title <i>*</i></span>
+                                        <input type="text" name="title" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="item">
+                                    <label>
+                                        <span>Abstract <i></i></span>
+                                        <input type="text" name="abs" id="mycss" />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="container-fluid p-0">
+                                    <div class="img-upload">
+                                        <input type="file" id="file" name='file' accept='.md' class="inputfile" />
+                                        <label for="file" id="fname" style="position: relative;
+                                        top: -10px;
+                                        right: 7px;">choose a file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="comment-submit" onclick="getfile()">commit</button>
+                                <span class="errorcss">{{msg}}</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--CONTACT WRAP END-->
+
+{% endblock body1 %} {% block js1 %}
+<script>
+    var inputs = document.querySelectorAll('.inputfile');
+    Array.prototype.forEach.call(inputs, function(input) {
+        var label = input.nextElementSibling,
+            labelVal = label.innerHTML;
+        input.addEventListener('change', function(e) {
+            var fileName = '';
+            fileName = e.target.value.split('\\').pop();
+
+            if (fileName)
+                label.querySelector('label').innerHTML = fileName;
+            else label.innerHTML = labelVal;
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    function check() {
+        if ((document.getElementById("file").value == null) || (document.getElementById("file").value == "")) {
+            alert("no inputfile");
+            return false;
+        } else if ((document.getElementById("title").value == null) || (document.getElementById("title").value == "")) {
+            alert("no title");
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
+{% endblock js1 %}

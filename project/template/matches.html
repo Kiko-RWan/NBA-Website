@@ -1,0 +1,94 @@
+{% extends 'base.html' %} {% block title %} {{info}} {% endblock title %} {% block body1 %}
+
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <!-- <section class="image-header" style="    
+    background: url(/static/images/photo11.jpg);
+    background-position: bottom;"> -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/match?mid=all">match</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>{{info}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--MAIN MATCH SHEDULE BEGIN-->
+
+<section class="main-match-shedule amateurs-match-shedule" style="background: white;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h6>{{info}}</h6>
+            </div>
+            {%if info == "over matches"%}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="main-lates-matches">
+                    {%for row in list%}
+                    <a href="#" class="item">
+                        <span class="championship">{{row.m_time}}</span>
+                        <span class="teams-wrap">
+                            <span class="team">
+                                <span>
+                                    <img src="/static/images/teamicon/{{row.t1_icon}}" alt="team-image">
+                                </span>
+                        <span>{{row.home_name}}</span>
+                        </span>
+                        <span class="score">
+                                <span>{{row.home_score}}:{{row.away_score}}</span>
+
+                        </span>
+                        <span class="team1">
+                                <span>{{row.away_name}}</span>
+                        <span><img src="/static/images/teamicon/{{row.t2_icon}}" alt="team-image"></span>
+                        </span>
+                        </span>
+                        <span class="game-result">{{row.t_city}} {{row.t_home}}</span>
+                    </a>
+                    {%endfor%}
+                </div>
+            </div>
+            {%else%}
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="main-lates-matches">
+                    {%for row in list%}
+                    <a href="#" class="item">
+                        <span class="championship">{{row.m_time}}</span>
+                        <span class="teams-wrap">
+                            <span class="team">
+                                <span>
+                                    <img src="/static/images/teamicon/{{row.t1_icon}}" alt="team-image">
+                                </span>
+                        <span>{{row.home_name}}</span>
+                        </span>
+                        <span class="score">
+                                <span>VS</span>
+                        </span>
+                        <span class="team1">
+                                <span>{{row.away_name}}</span>
+                        <span><img src="/static/images/teamicon/{{row.t2_icon}}" alt="team-image"></span>
+                        </span>
+                        </span>
+                        <span class="game-result">{{row.t_city}} {{row.t_home}}</span>
+                    </a>
+                    {%endfor%}
+                </div>
+            </div>
+            {%endif%}
+        </div>
+    </div>
+</section>
+
+<!--MAIN MATCH SHEDULE END-->
+
+{% endblock body1 %}

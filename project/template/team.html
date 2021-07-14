@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {%block title%} Team-{{team_name}} {%endblock title%} {% block body1 %}
+
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/team?tname=all">team</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>{{team_name}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--队伍简介 BEGIN-->
+<section class="club-wrap">
+    <div class="club-top-info">
+        <div class="organisation-header-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="club-logo  wpb_animate_when_almost_visible wpb_zoomInLeft zoomInLeft wpb_start_animation animated">
+                            <img class="img-responsive" src="/static/images/teamicon/{{team_info.t_icon}}" alt="organisation logo">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="org-club-stat">
+                            <div class="title"></div>
+                            <div class="next">
+                                <div class="avatar"> </div>
+                                <div class="info">
+                                    <div class="name"></div>
+                                    <div class="date"></div>
+                                </div>
+                            </div>
+                            <div class="title"></div>
+                            <div class="circle-item">
+                                <div class="circle-bar"></div>
+                                <div class="text"></div>
+                            </div>
+                            <div class="circle-item">
+                                <div class="circle-bar"></div>
+                                <div class="text"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+
+                        <div class="org-club-info">
+                            <div class="item country"></div>
+                            <div class="item"><span>City:</span> {{ team_info.t_city }}</div>
+                            <div class="item"><span>Home:</span> {{ team_info.t_home }}</div>
+                            <div class="item"><span>Coach:</span> {{ team_coach.c_name }}</div>
+                            <div class="item"><span>Win / Total:</span> {{ team_coach.win }} / {{ team_coach.total }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--队伍简介 END -->
+
+<!--队员 BEGIN-->
+<div class="club-staff-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Team Players</h4>
+            </div>
+            <div class="staff-box">
+                {% for row in team_players %}
+                <div class="col-md-4  col-sm-6 col-xs-12">
+                    <a href="/player?pname={{row.p_name}}" class="item">
+                        <span class="info">
+                            <span class="name">{{row.p_name}}</span>
+                        <span class="number">{{row.p_number}}</span>
+                        </span>
+                        <img src="/static/images/playerimg/{{row.p_img}}" alt="player">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--队员 END-->
+
+
+{% endblock body1 %}

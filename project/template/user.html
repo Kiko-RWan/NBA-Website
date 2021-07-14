@@ -1,0 +1,112 @@
+{% extends 'base.html' %} {% block title %} user page {% endblock title %}{% block css1 %}
+<style>
+    .abscss {
+        white-space: normal;
+        word-wrap: break-word;
+        word-break: break-all;
+        padding-top: 20px;
+        font-size: 16px;
+        color: #141414;
+        line-height: 26px;
+        font-family: "Open Sans", sans-serif;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-text-size-adjust: 100%;
+        font-weight: 400;
+    }
+    
+    #titlecss {
+        font-size: 22px;
+        font-family: "Open Sans", sans-serif;
+        position: relative;
+        top: 15px;
+    }
+    
+    #timecss {
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    #th1css {
+        width: 800px;
+    }
+    
+    .update {
+        position: relative;
+        right: 50px;
+    }
+</style>
+
+{% endblock css1 %} {% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/user/">user</a>/</li>
+                            <li>category</li>
+                        </ul>
+                        <h1>{{uname}}'s user page</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--CART WRAP BEGIN-->
+<section class="cart-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>Your articles</h4>
+            </div>
+            <div class="col-md-12 overflow-scroll">
+                <table class="cart-table">
+                    <tr>
+                        <th></th>
+                        <th id="th1css">article</th>
+                        <th>Release Time</th>
+                    </tr>
+                    {%for row in list%}
+                    <tr class="cart_iem">
+
+                        <td class="delete"><a onclick="return jobconfirm();" href="/del_art/?aid={{row.a_id}}"><i class="fa fa-close" aria-hidden="true"></i></a></td>
+                        <td class="name">
+                            <div class="info">
+                                <a href="/article/?aid={{row.a_id}}" class="name" id="titlecss">{{row.a_title}}</a>
+                                <div class="clear"></div>
+                                <p class='abscss'>{{row.a_abs}}</p>
+                            </div>
+                        </td>
+                        <td class="total" id="timecss">{{row.release}}</td>
+
+                    </tr>
+                    {%endfor%}
+                </table>
+            </div>
+            <div class="update-wrap">
+                <a href="/add_art/">
+                    <button class="update">add</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!--CART WRAP END-->
+
+{% endblock body1 %} {% block js1 %}
+<script type="text/javascript" language="JavaScript">
+    function jobconfirm() {
+        if (confirm("continue?")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+{% endblock js1 %}

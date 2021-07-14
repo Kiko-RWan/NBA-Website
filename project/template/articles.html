@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {%block title%} All Articles {%endblock title%} {% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/article?aid=all">article</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>all articles</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<div class="content">
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+            <!--NEWS LIST BEGIN-->
+            <div class="news-list">
+                {%for row in list%}
+                <div class="item img-top">
+                    <div class="info">
+                        <a href="/article?aid={{row.a_id}}" class="name">{{row.a_title}}</a>
+                        <div class="wrap">
+                            <a>{{row.release}}</a> by <a>{{row.u_name}}</a>
+                        </div>
+                        <div class="clear"></div>
+                        <p>{{row.a_abs}}</p>
+                    </div>
+                </div>
+                {%endfor%}
+            </div>
+            <!--NEWS LIST END-->
+        </div>
+    </div>
+</div>
+
+
+{%endblock body1%}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {%block title%} All Teams {%endblock title%} {% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/team?tname=all">team</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>nba teams</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+<!--队伍 BEGIN-->
+<div class="championship-wrap">
+    <div class="champ-tab-wrap tab-content">
+        <div class="tab-item part-wrap tab-pane active" id="participants">
+            <div class="part-list">
+                <div class="container">
+                    <div class="row">
+                        {% for team in teamlist %}
+                        <div class="col-md-3">
+                            <a href="/team/?tname={{team.t_name}}" class="item">
+                                <span class="logo"><img src="/static/images/teamicon/{{team.t_icon}}" width="80"
+                                        height="80" alt="team-logo"></span>
+                                <span class="name">{{team.t_name}}</span>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--队伍 END-->
+{% endblock body1 %}

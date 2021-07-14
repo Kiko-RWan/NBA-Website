@@ -1,0 +1,345 @@
+{% extends 'base.html' %} {%block css1%}
+<style>
+    .label {
+        position: relative;
+        left: 30px;
+    }
+    
+    .logo {
+        width: 25px;
+        position: relative;
+        top: -1px;
+        right: 10px;
+    }
+</style>
+{%endblock css1%} {% block body1 %}
+<!--页面简介 BEGIN-->
+<section class="image-header" style="background: url(/static/images/photo10.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info">
+                    <div class="wrap">
+                        <ul class="breadcrumbs">
+                            <li><a href="/home">home</a>/</li>
+                            <li>Category</li>
+                        </ul>
+                        <h1>2020-2021 Playoffs</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--页面简介 END-->
+
+
+<section class="standing-cup">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>West</h4>
+            </div>
+            <div class="col-md-12 overflow-scroll">
+                <div class="tab-content">
+                    <div class="cup-body tab-pane active">
+                        <div class="jQBracket lr" style="width: 1870px;">
+                            <div class="bracket" style="height: 780px;">
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="0">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.0.icon1|safe}}{{poinfo.0.t1}}
+                                                </div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-1">{{poinfo.0.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="1">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.0.icon2|safe}}{{poinfo.0.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-2">{{poinfo.0.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team  win" style="width: 440px;" data-teamid="2">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.1.icon1|safe}}{{poinfo.1.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-3">{{poinfo.1.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.1.icon2|safe}}{{poinfo.1.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-4">{{poinfo.1.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team win " style="width: 440px;" data-teamid="4">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.2.icon1|safe}}{{poinfo.2.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-5">{{poinfo.2.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.2.icon2|safe}}{{poinfo.2.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-6">{{poinfo.2.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="6">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.3.icon1|safe}}{{poinfo.3.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-7">{{poinfo.3.score1}}</div>
+                                            </div>
+                                            <div class="team  lose" style="width: 440px;" data-teamid="7">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.3.icon2|safe}}{{poinfo.3.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-8">{{poinfo.3.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 390px;">
+                                        <div class="teamContainer" style="top: 118px;">
+                                            <div class="team  win" style="width: 440px;" data-teamid="0">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.8.icon1|safe}}{{poinfo.8.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-9">{{poinfo.8.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.8.icon2|safe}}{{poinfo.8.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-10">{{poinfo.8.score2}}
+                                                </div>
+                                            </div>
+                                            <div class="connector" style="height: 195px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 390px;">
+                                        <div class="teamContainer" style="top: 118px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.9.icon1|safe}}{{poinfo.9.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-11">{{poinfo.9.score1}}
+                                                </div>
+                                            </div>
+                                            <div class="team  lose" style="width: 440px;" data-teamid="6">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.9.icon2|safe}}{{poinfo.9.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-12">{{poinfo.9.score2}}
+                                                </div>
+                                            </div>
+                                            <div class="connector" style="height: 195px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 780px;">
+                                        <div class="teamContainer" style="position: absolute; top: 313px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.12.icon1|safe}}{{poinfo.12.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-13">{{poinfo.12.score1}}
+                                                </div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.12.icon2|safe}}{{poinfo.12.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-14">{{poinfo.12.score2}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="standing-cup">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4>East</h4>
+            </div>
+            <div class="col-md-12 overflow-scroll">
+                <div class="tab-content">
+                    <div class="cup-body tab-pane active">
+                        <div class="jQBracket lr" style="width: 1870px;">
+                            <div class="bracket" style="height: 780px;">
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="0">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.4.icon1|safe}}{{poinfo.4.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-1">{{poinfo.4.score1}}</div>
+                                            </div>
+                                            <div class="team  lose" style="width: 440px;" data-teamid="1">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.4.icon2|safe}}{{poinfo.4.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-2">{{poinfo.4.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team  win" style="width: 440px;" data-teamid="2">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.5.icon1|safe}}{{poinfo.5.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-3">{{poinfo.5.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.5.icon2|safe}}{{poinfo.5.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-4">{{poinfo.5.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team  win" style="width: 440px;" data-teamid="4">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.6.icon1|safe}}{{poinfo.6.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-5">{{poinfo.6.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.6.icon2|safe}}{{poinfo.6.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-6">{{poinfo.6.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 195px;">
+                                        <div class="teamContainer" style="top: 20.5px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="6">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.7.icon1|safe}}{{poinfo.7.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-7">{{poinfo.7.score1}}</div>
+                                            </div>
+                                            <div class="team  lose" style="width: 440px;" data-teamid="7">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.7.icon2|safe}}{{poinfo.7.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-8">{{poinfo.7.score2}}</div>
+                                            </div>
+                                            <div class="connector" style="height: 97.5px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 390px;">
+                                        <div class="teamContainer" style="top: 118px;">
+                                            <div class="team  win" style="width: 440px;" data-teamid="0">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.10.icon1|safe}}{{poinfo.10.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-9">{{poinfo.10.score1}}</div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.10.icon2|safe}}{{poinfo.10.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-10">{{poinfo.10.score2}}
+                                                </div>
+                                            </div>
+                                            <div class="connector" style="height: 195px; width: 90px; right: -92px; top: 76px; border-bottom: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; bottom: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="match" style="height: 390px;">
+                                        <div class="teamContainer" style="top: 118px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.11.icon1|safe}}{{poinfo.11.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-11">{{poinfo.11.score1}}
+                                                </div>
+                                            </div>
+                                            <div class="team  lose" style="width: 440px;" data-teamid="6">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.11.icon2|safe}}{{poinfo.11.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-12">{{poinfo.11.score2}}
+                                                </div>
+                                            </div>
+                                            <div class="connector" style="height: 195px; width: 90px; right: -92px; bottom: 76px; border-top: none;">
+                                                <div class="connector" style="width: 90px; right: -90px; top: 0px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="round" style="width: 440px; margin-right: 180px">
+                                    <div class="match" style="height: 780px;">
+                                        <div class="teamContainer" style="position: absolute; top: 313px;">
+                                            <div class="team win" style="width: 440px;" data-teamid="3">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.13.icon1|safe}}{{poinfo.13.t1}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-13">{{poinfo.13.score1}}
+                                                </div>
+                                            </div>
+                                            <div class="team lose" style="width: 440px;" data-teamid="5">
+                                                <div class="label" style="width: 400px;">
+                                                    {{poinfo.13.icon2|safe}}{{poinfo.13.t2}}</div>
+                                                <div class="score" style="width: 40px;" data-resultid="result-14">{{poinfo.13.score2}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock body1 %}

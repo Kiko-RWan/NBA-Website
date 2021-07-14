@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{%block title%}{%endblock title%}</title>
+    <link href="/static/css/web.css" rel="stylesheet" />
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link href="/static/css/library/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/static/dev-assets/preloader-default.css" rel="stylesheet" type="text/css" />
+    <link href="/static/dev-assets/demo-switcher.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css-min/soccer.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        .image-head {
+            min-height: 300px;
+            background: url(/static/images/pht4.jpg) no-repeat right;
+            background-size: cover;
+            overflow: hidden;
+            clear: both;
+        }
+    </style>
+    {% block css1 %} {% endblock css1 %}
+
+</head>
+
+<body>
+
+    <div class="preloader-wrapper" id="preloader">
+        <div class="motion-line dark-big"></div>
+        <div class="motion-line yellow-big"></div>
+        <div class="motion-line dark-small"></div>
+        <div class="motion-line yellow-normal"></div>
+        <div class="motion-line yellow-small1"></div>
+        <div class="motion-line yellow-small2"></div>
+    </div>
+
+    {% block head %}
+    <!--顶部栏 BEGIN-->
+    <div class="main-menu-wrap sticky-menu">
+        <div class="container">
+            <a href="/" class="custom-logo-link"><img src="/static/images/logo_nba.svg" alt="logo" class="custom-logo"></a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#team-menu" aria-expanded="false">
+                <span class="sr-only"></span></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <nav class="navbar">
+                <div class="collapse navbar-collapse" id="team-menu">
+                    <ul class="main-menu nav">
+                        <li>
+                            <a><span>Home</span></a>
+                            <ul>
+                                <li><a href="/home/"><span>Home Page</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a><span>Match</span></a>
+                            <ul>
+                                <li><a href="/match/?mid=over"><span>over matches</span></a></li>
+                                <li><a href="/match/?mid=coming"><span>coming matches</span></a></li>
+                                <li><a href="/playoff/"><span>playoff chart</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a><span>Team</span></a>
+                            <ul>
+                                <li><a href="/team/?tname=all"><span>all Teams</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a><span>Player</span></a>
+                            <ul>
+                                <li><a href="/player/?pname=all"><span>all players</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a><span>Article</span></a>
+                            <ul>
+                                <li><a href="/article/?aid=all"><span>all Articles</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a><span>User</span></a>
+                            <ul>
+                                <li><a href="/user/"><span>User page</span></a></li>
+                                <li><a href="/login/"><span>login</span></a></li>
+                                <li><a href="/logout/"><span>logout</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--顶部栏 END-->
+    {% endblock head %} {% block category %} {% endblock category %} {% block body1 %} {% endblock body1 %} {% block extra %}
+    <!--占位 -->
+    <div class="main-sponsor-slider-background" style="background: white">
+        <div id="main-sponsor-slider" class="carousel slide main-sponsor-slider" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                            <div class="col-xs-4 text-center">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--占位 -->
+    {% endblock extra %}
+
+    <script type="text/javascript" src="/static/js/library/jquery.js"></script>
+    <script type="text/javascript" src="/static/js/library/jquery-ui.js"></script>
+    <script type="text/javascript" src="/static/js/library/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/library/jquery.sticky.js"></script>
+    <script type="text/javascript" src="/static/js/library/jquery.jcarousel.js"></script>
+    <script type="text/javascript" src="/static/js/library/jcarousel.connected-carousels.js"></script>
+    <script type="text/javascript" src="/static/js/library/owl.carousel.js"></script>
+    <script type="text/javascript" src="/static/js/library/progressbar.js"></script>
+    <script type="text/javascript" src="/static/js/library/jquery.bracket.min.js"></script>
+    <script type="text/javascript" src="/static/js/library/chartist.js"></script>
+    <script type="text/javascript" src="/static/js/library/Chart.js"></script>
+    <script type="text/javascript" src="/static/js/library/fancySelect.js"></script>
+    <script type="text/javascript" src="/static/js/library/isotope.pkgd.js"></script>
+    <script type="text/javascript" src="/static/js/library/imagesloaded.pkgd.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.team-coundown.js"></script>
+    <script type="text/javascript" src="/static/js/matches-slider.js"></script>
+    <script type="text/javascript" src="/static/js/header.js"></script>
+    <script type="text/javascript" src="/static/js/matches_broadcast_listing.js"></script>
+    <script type="text/javascript" src="/static/js/news-line.js"></script>
+    <script type="text/javascript" src="/static/js/match_galery.js"></script>
+    <script type="text/javascript" src="/static/js/main-club-gallery.js"></script>
+    <script type="text/javascript" src="/static/js/product-slider.js"></script>
+    <script type="text/javascript" src="/static/js/circle-bar.js"></script>
+    <script type="text/javascript" src="/static/js/standings.js"></script>
+    <script type="text/javascript" src="/static/js/shop-price-filter.js"></script>
+    <script type="text/javascript" src="/static/js/timeseries.js"></script>
+    <script type="text/javascript" src="/static/js/radar.js"></script>
+    <script type="text/javascript" src="/static/js/slider.js"></script>
+    <script type="text/javascript" src="/static/js/preloader.js"></script>
+    <script type="text/javascript" src="/static/js/diagram.js"></script>
+    <script type="text/javascript" src="/static/js/bi-polar-diagram.js"></script>
+    <script type="text/javascript" src="/static/js/label-placement-diagram.js"></script>
+    <script type="text/javascript" src="/static/js/donut-chart.js"></script>
+    <script type="text/javascript" src="/static/js/animate-donut.js"></script>
+    <script type="text/javascript" src="/static/js/advanced-smil.js"></script>
+    <script type="text/javascript" src="/static/js/svg-path.js"></script>
+    <script type="text/javascript" src="/static/js/pick-circle.js"></script>
+    <script type="text/javascript" src="/static/js/horizontal-bar.js"></script>
+    <script type="text/javascript" src="/static/js/gauge-chart.js"></script>
+    <script type="text/javascript" src="/static/js/stacked-bar.js"></script>
+
+    <script type="text/javascript" src="/static/js/library/chartist-plugin-legend.js"></script>
+    <script type="text/javascript" src="/static/js/library/chartist-plugin-threshold.js"></script>
+    <script type="text/javascript" src="/static/js/library/chartist-plugin-pointlabels.js"></script>
+
+    <script type="text/javascript" src="/static/js/treshold.js"></script>
+    <script type="text/javascript" src="/static/js/visible.js"></script>
+    <script type="text/javascript" src="/static/js/anchor.js"></script>
+    <script type="text/javascript" src="/static/js/landing_carousel.js"></script>
+    <script type="text/javascript" src="/static/js/landing_sport_standings.js"></script>
+    <script type="text/javascript" src="/static/js/twitterslider.js"></script>
+    <script type="text/javascript" src="/static/js/champions.js"></script>
+    <script type="text/javascript" src="/static/js/landing_mainnews_slider.js"></script>
+    <script type="text/javascript" src="/static/js/carousel.js"></script>
+    <script type="text/javascript" src="/static/js/video_slider.js"></script>
+    <script type="text/javascript" src="/static/js/footer_slides.js"></script>
+    <script type="text/javascript" src="/static/js/player_test.js"></script>
+
+    <script type="text/javascript" src="/static/js/main.js"></script>
+
+
+    <script type="text/javascript" src="/static/dev-assets/demo-switcher.js"></script>
+
+    {% block js1 %} {% endblock js1 %} {% block js2 %} {% endblock js2 %}
+
+</body>
+
+
+</html>
